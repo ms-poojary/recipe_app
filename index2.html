@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <div id="output"></div>
+    <script>
+        async function fetchData() {
+            console.log("Starting fetch request");
+
+            const url = 'https://tasty.p.rapidapi.com/recipes/list';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': '469c087769mshc6a737c2e32227bp1844cajsn45906e9527d3',  // Replace with your actual API key
+                    'x-rapidapi-host': 'tasty.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const data = await response.json();
+                console.log(data);  // Log the data for debugging
+                displayData(data);  // Call the function to display data
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        function displayData(data) {
+            const output = document.getElementById('output');
+            output.innerHTML = '';
+
+            data.results.forEach(recipe => {
+                const recipeDiv = document.createElement('div');
+                recipeDiv.classList.add('recipe');
+
+                const title = document.createElement('h2');
+                title.textContent = recipe.name;
+                recipeDiv.appendChild(title);
+
+                const description = document.createElement('p');
+                description.textContent = recipe.description;
+                recipeDiv.appendChild(description);
+
+
+                output.appendChild(recipeDiv);
+            });
+        }
+
+        fetchData();
+    </script>
+</body>
+</html> -->

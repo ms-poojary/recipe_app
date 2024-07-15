@@ -1,36 +1,42 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import { Ionicons,FontAwesome } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+        headerShown:false,
+        tabBarLabelStyle: { display: 'none' }, // Hide labels by setting display to none 
+        // tabBarStyle: { height: 60},
+        tabBarInactiveBackgroundColor:Colors.primary.color8,
+        tabBarActiveBackgroundColor:Colors.primary.color8,
+        tabBarInactiveTintColor: Colors.secondary.lightgrey,
+        tabBarActiveTintColor: Colors.primary.color6,
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name='home'
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+          tabBarLabel: 'Home',
+          headerShown:false,
+          tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
         }}
       />
-      <Tabs.Screen
-        name="explore"
+        <Tabs.Screen
+        name='explore'
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+          tabBarLabel: 'Explore ',
+          tabBarIcon: ({ color, size }) => <Ionicons name="search" size={size} color={color} />,
         }}
+      />
+      <Tabs.Screen 
+      name='favorite'
+      options={
+        {
+          tabBarIcon:({color,size})=> <Ionicons name="heart" size={size} color={color} />
+        }
+      }
       />
     </Tabs>
   );
