@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Button, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // Correct import for navigation
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '@/constants/Colors';
@@ -54,8 +54,9 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.innerContainer}>
+    <SafeAreaView >
+    <ScrollView>
+    <View>
         <Button title="Go Back" color={Colors.primary.color5} onPress={() => navigation.goBack()} />
         <HomeSearch />
         {categories.length>0&&<Categories categories={categories} activeCategory={activeCategory} handleChangeCategory={handleChangeCategory} />}
@@ -63,9 +64,10 @@ const Home = () => {
         
           <Recipes meals={meals} categories={categories}/>
         
-        {/* <Recomend /> */}
+        <Recomend />
         
       </View>
+    </ScrollView>
     </SafeAreaView>
   );
 };
