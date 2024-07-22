@@ -34,7 +34,8 @@ const RecipeCard = ({ item ,navigation}) => {
   return (
     <View style={styles.cardContainer}>
       <Pressable style={styles.pressable}
-      onPress={()=> navigation.navigate('components/RecipeDetail',{...item})}
+      onPress={()=> navigation.navigate('components/RecipeDetail',{ itemId: 86,
+        otherParam: 'anything you want here',})}
       >
         <View style={styles.innerContainer}>
           <Image

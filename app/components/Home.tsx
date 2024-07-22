@@ -28,7 +28,8 @@ const Home = () => {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni,
           asperiores.
         </Text>
-        <Pressable style={styles.btn} onPress={handlePress}>
+        <Pressable style={styles.btn} 
+        onPress={handlePress}>
           <Text style={styles.btnText}>Get Started</Text>
         </Pressable>
       </View>
