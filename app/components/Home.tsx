@@ -23,13 +23,12 @@ const Home = () => {
       />
       <View style={styles.content}>
         <View style={styles.shadow}></View>
-        <Text style={styles.heading}>Let's Cook Delicious</Text>
+        <Text style={styles.heading}>Let's Cook  VacchjuDelicious</Text>
         <Text style={styles.para}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni,
           asperiores.
         </Text>
-        <Pressable style={styles.btn} 
-        onPress={handlePress}>
+        <Pressable style={styles.btn} onPress={handlePress}>
           <Text style={styles.btnText}>Get Started</Text>
         </Pressable>
       </View>

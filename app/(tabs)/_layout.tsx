@@ -30,14 +30,14 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <Ionicons name="search" size={size} color={color} />,
         }}
       />
-      <Tabs.Screen 
+      {/* <Tabs.Screen 
       name='favorite'
       options={
         {
           tabBarIcon:({color,size})=> <Ionicons name="heart" size={size} color={color} />
         }
       }
-      />
+      /> */}
     </Tabs>
   );
 }

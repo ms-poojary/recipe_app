@@ -45,7 +45,10 @@ export const Colors = {
     red:'#96031a',
     black:'#000',
     lightgrey:'#e5e5e5',
-    grey:'#adb5bd'
+    grey:'#adb5bd',
+    darkgrey1:'#343a40',
+    darkgrey2:'#495057',
+    darkgrey3:'#6c757d'
 
   }
 };
