@@ -17,5 +17,6 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/components/MexicanDetails.js", "app/components/RecipeDetail.jsx"  ],
+"exclude": ["node_modules"],
 }
