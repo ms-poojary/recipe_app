@@ -22,12 +22,12 @@ const Recomend = () => {
           
           
             <Pressable onPress={recomedPress} style={styles.RecomendsCard}>
-                <Image source={require('@/assets/images/food12.jpg')}
+                <Image source={require('@/assets/images/food13.jpg')}
                 style={styles.RecomendsImage}
                 />
                 <View>
                     <Text style={styles.CardText}>recipee</Text>
-                    <Text style={{color:Colors.secondary.grey}}>-by Vacchu</Text>
+                    <Text style={{color:Colors.secondary.darkgrey1}}>Indian Cuisine</Text>
                 </View>
             </Pressable>
             <Pressable onPress={recomedPress} style={styles.RecomendsCard}>
@@ -36,7 +36,7 @@ const Recomend = () => {
                 />
                 <View>
                     <Text style={styles.CardText}>recipee</Text>
-                    <Text style={{color:Colors.secondary.grey}}>-by Vacchu</Text>
+                    <Text style={{color:Colors.secondary.darkgrey1}}>-Americans Cuisine</Text>
                 </View>
             </Pressable>
             <Pressable onPress={recomedPress} style={styles.RecomendsCard}>
@@ -45,7 +45,7 @@ const Recomend = () => {
                 />
                 <View>
                     <Text style={styles.CardText}>recipee</Text>
-                    <Text style={{color:Colors.secondary.grey}}>-by Vacchu</Text>
+                    <Text style={{color:Colors.secondary.darkgrey1}}>-Chinese Cuisine</Text>
                 </View>
             </Pressable>
             <Pressable onPress={recomedPress} style={styles.RecomendsCard}>
@@ -54,7 +54,7 @@ const Recomend = () => {
                 />
                 <View>
                     <Text style={styles.CardText}>recipee</Text>
-                    <Text style={{color:Colors.secondary.grey}}>-by Vacchu</Text>
+                    <Text style={{color:Colors.secondary.darkgrey1}}>-Italian Cuisine</Text>
                 </View>
             </Pressable>
           
@@ -92,15 +92,16 @@ const styles=StyleSheet.create({
     },
     CardText:{
         fontSize:12,
-        color:Colors.primary.color6
+        color:Colors.primary.color2,
+        fontFamily:'font6',
     },
     RecomendBg:{
       paddingHorizontal:10
     },
     RecomendText:{
         fontSize:16,
-        fontWeight:'semibold',
-        color:Colors.primary.color2
+        color:Colors.primary.color7,
+        fontFamily:'font5'
     }
 })
 

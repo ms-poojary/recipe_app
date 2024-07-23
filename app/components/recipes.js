@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Loading from './loading'; // Ensure the correct import path
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AntDesign } from '@expo/vector-icons';
+import { Colors } from '@/constants/Colors';
 //import { WebView } from 'react-native-webview';
 //import {youtubeiframe} from "react-native-youtube-iframe";
 // import {WebViewProps} from 'react-native-webview';
@@ -38,7 +40,7 @@ const Recipes = ({ categories = [], meals = [] }) => {
             <Loading size="large" />
           ) : (
             <View style={styles.container}>
-              <Text style={styles.header}>Recipes</Text>
+              <Text style={styles.header}>Your Recipes</Text>
               <View style={styles.gridContainer}>
                 {meals.map((item, index) => (
                   <RecipeCard key={index} item={item} onPress={() => handlePress(item)} />
@@ -57,8 +59,8 @@ const Recipes = ({ categories = [], meals = [] }) => {
             <View style={styles.modalContainer}>
               <View style={styles.modalContentWrapper}>
                 <TouchableOpacity onPress={handleClose} style={styles.closeButton}>
-                  <Text style={styles.closeButtonText}>X</Text>
-                </TouchableOpacity>
+                <AntDesign name="closecircle" size={24} color={Colors.primary.color8} />     
+                           </TouchableOpacity>
                 <ScrollView contentContainerStyle={styles.modalContent}>
                   <Image
                     source={{ uri: mealData.strMealThumb }}
@@ -69,15 +71,15 @@ const Recipes = ({ categories = [], meals = [] }) => {
                   <Text style={styles.modalText}>{mealData.strArea}</Text>
                   <View style={styles.iconRow}>
                     <View style={styles.iconContainer}>
-                      <Icon name="time-outline" size={24} color="black" />
+                      <Icon name="time-outline" size={24} color={Colors.primary.color9} />
                       <Text style={styles.iconText}>30 mins</Text>
                     </View>
                     <View style={styles.iconContainer}>
-                      <Icon name="restaurant-outline" size={24} color="black" />
+                      <Icon name="restaurant-outline" size={24} color={Colors.primary.color9}  />
                       <Text style={styles.iconText}>2 servings</Text>
                     </View>
                     <View style={styles.iconContainer}>
-                      <Icon name="flame-outline" size={24} color="black" />
+                      <Icon name="flame-outline" size={24} color={Colors.primary.color9}  />
                       <Text style={styles.iconText}>300 kcal</Text>
                     </View>
                   </View>
@@ -135,10 +137,11 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   header: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 20,
+  fontFamily:'font5',
+  color:Colors.primary.color7,
     textAlign: 'center',
-    marginBottom: 16,
+    marginBottom: 10,
   },
   gridContainer: {
     flexDirection: 'row',
@@ -162,6 +165,8 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+    fontSize:12,
+    color:Colors.primary.color3
   },
   image: {
     width: '100%',
@@ -169,30 +174,31 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 5,
     borderWidth: 2,
-    borderColor: '#000',
+    borderColor: Colors.secondary.grey,
   },
   modalContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: Colors.secondary.lightwhite,
     justifyContent: 'center',
     alignItems: 'center',
   },
   modalContentWrapper: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     borderRadius: 0,
-    padding: 20,
+    padding: 10,
+    paddingTop:30
   },
   closeButton: {
     position: 'absolute',
-    top: 10,
-    right: 10,
+    top:5,
+    right:5,
   },
   closeButtonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'black',
+    // fontSize: 18,
+    // fontWeight: 'bold',
+    // color: 'black',
   },
   modalContent: {
     alignItems: 'center',
@@ -205,14 +211,17 @@ const styles = StyleSheet.create({
   },
   modalHeader: {
     marginTop: 15,
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 22,
+    fontFamily:'font5',
     textAlign: 'center',
+    color:Colors.primary.color7
   },
   modalText: {
     marginTop: 15,
     fontSize: 18,
     textAlign: 'center',
+    fontFamily:'font6',
+    color:Colors.primary.color4
   },
   iconRow: {
     flexDirection: 'row',
@@ -227,11 +236,13 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: 14,
     textAlign: 'center',
+    fontFamily:'font6'
   },
   ingredientHeader: {
     marginTop: 15,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily:'font5',
+    color:Colors.primary.color7,
     alignSelf: 'flex-start',
     marginLeft: 10,
   },
@@ -241,21 +252,27 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   ingredientText: {
-    fontSize: 16,
+    fontSize: 14,
+    fontFamily:'font6',
+    color:Colors.secondary.darkgrey1,
     marginBottom: 5,
   },
   instructionHeader: {
     marginTop: 15,
     fontSize: 20,
-    fontWeight: 'bold',
     alignSelf: 'flex-start',
+    fontFamily:'font5',
     marginLeft: 10,
+    color:Colors.primary.color7,
+    
   },
   instructionText: {
-    fontSize: 16,
+    fontSize: 14,
     marginBottom: 5,
     marginLeft: 10,
     marginTop: 10,
+    fontFamily:'font6',
+    color:Colors.secondary.darkgrey1
   },
 });
 

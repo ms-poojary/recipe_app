@@ -18,7 +18,7 @@ const Stack=createNativeStackNavigator<RootStackParamList>();
 
 
 
-const explore = () => {
+const Explore = () => {
   return (
   <Stack.Navigator initialRouteName='Mexican' screenOptions={{
     headerShown:false
@@ -33,4 +33,4 @@ const explore = () => {
 const styles=StyleSheet.create({
 })
 
-export default explore
+export default Explore

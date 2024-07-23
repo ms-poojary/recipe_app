@@ -75,8 +75,9 @@ const styles = StyleSheet.create({
   },
   CardText: {
     fontSize: 12,
-    color: Colors.primary.color6,
+    color: Colors.primary.color2,
     width: 90,
+    fontFamily:'font7',
     textAlign: 'center',
   },
   CategoryBg: {
@@ -84,18 +85,19 @@ const styles = StyleSheet.create({
   },
   CategoryText: {
     fontSize: 16,
-    fontWeight: 'semibold',
-    color: Colors.primary.color2,
+    fontFamily:'font5',
+    margin:15,
+    color: Colors.primary.color7,
   },
   activeContainer: {
     backgroundColor: Colors.secondary.lightgrey,
   },
   activeCategoriesCard: {
-    borderColor: Colors.primary.color1,
+    borderColor: Colors.primary.color6,
     borderWidth: 2,
   },
   activeCardText: {
-    color: Colors.primary.color1,
+    color: Colors.primary.color6,
   },
 });
 

@@ -8,7 +8,7 @@ import {
   createNativeStackNavigator,
   NativeStackScreenProps,
 } from "@react-navigation/native-stack";
-import { RootStackParamList } from "./../(tabs)/explore";
+import { RootStackParamList } from "../(tabs)/Explore";
 import { FontAwesome } from "@expo/vector-icons";
 
 type MexicanDetailsProps = NativeStackScreenProps<
@@ -24,64 +24,71 @@ const MexicanDetails = ({ route }: MexicanDetailsProps) => {
 
 
   async function fetchMexicanDetails() {
-    // const url = `https://the-mexican-food-db.p.rapidapi.com/${MexicanId}`;
+    const url = `https://the-mexican-food-db.p.rapidapi.com/${MexicanId}`;
     
 
     const options = {
       method: "GET",
+      // old key
       headers: {
         "x-rapidapi-key": "f4067ac23dmshb21fc863d9d6345p105c8ejsnfa2872eb4ce3",
         "x-rapidapi-host": "the-mexican-food-db.p.rapidapi.com",
       },
+
+      // new Key
+    // headers: {
+    //   'x-rapidapi-key': '36dab04c92mshdf61430d47f24fcp14b243jsn5cc8a50ad87f',
+    //   'x-rapidapi-host': 'the-mexican-food-db.p.rapidapi.com'
+    // }
     };
 
     try {
-      // const response = await fetch(url, options);
-      // const result = await response.json();
+      const response = await fetch(url, options);
+      const result = await response.json();
 
-      const result = {
-        description:
-          "Tommi Miers’ chipotle baked eggs are a simple way to start the day, with all the sweetly smoky flavours of a tomato-chipotle sauce. Mop up with tortillas or flatbreads.",
-        difficulty: "Easy",
-        id: "9",
-        image: "https://apipics.s3.amazonaws.com/mexican_api/9.jpg",
-        ingredients: [
-          "3 tbsp olive oil",
-          "1 onion, finely sliced",
-          "2 garlic cloves, finely sliced",
-          "1 small red pepper, deseeded and finely sliced",
-          "1 red chilli, finely chopped",
-          "1 tsp ground cumin",
-          "1 tsp ground cinnamon",
-          "1 tsp allspice",
-          "A few large pinches of Mexican oregano or hoja santa (optional; see Know How)",
-          "1 tbsp chipotles in adobo (or more to taste; see Know How)",
-          "2 x 400g tins chopped tomatoes or 700g fresh tomatoes, chopped",
-          "2-3 tsp brown sugar",
-          "1 tbsp red wine vinegar",
-          "8 medium free-range egg",
-          "8 corn or flour tortillas",
-          "Sliced avocado",
-          "Handful coriander leaves or chervil, torn",
-        ],
-        method: [
-          {
-            "Step 1":
-              "Heat the oven to 170°C fan/gas 5. Warm the olive oil in a large ovenproof frying pan over a medium heat – or use a regular pan and transfer to a baking dish for step 3. Add the onion, garlic, pepper and chilli. Season with a few pinches of salt and fry gently for 20 minutes until the pepper is soft and sweet.",
-          },
-          {
-            "Step 2":
-              "Add the spices and oregano/hoja santa, if using, Cook for 30 seconds more, then add the chipotles, tomatoes, sugar and vinegar with another big pinch of salt. The amount of sugar needed to season this will depend on whether you’re using tinned or fresh tomatoes and their ripeness. Pour in 250ml water, then simmer for 15 minutes until the sauce has reduced a little but is still loose enough to envelop the eggs. Taste to check the seasoning.",
-          },
-          {
-            "Step 3":
-              "Make 8 small indents in the sauce and crack in the eggs. Bake in the oven for 12-15 minutes until the whites are just set. While the eggs are cooking, warm the tortillas, then serve with the avocado and a sprinkle of fresh herbs.",
-          },
-        ],
-        portion: "Serves 4",
-        time: "Hands-on time 25 min, plus simmering time 10 min ",
-        title: "Chipotle baked eggs",
-      };
+      // const result = {
+      //   description:
+      //     "Tommi Miers’ chipotle baked eggs are a simple way to start the day, with all the sweetly smoky flavours of a tomato-chipotle sauce. Mop up with tortillas or flatbreads.",
+      //   difficulty: "Easy",
+      //   id: "9",
+      //   image: "https://apipics.s3.amazonaws.com/mexican_api/9.jpg",
+      //   ingredients: [
+      //     "3 tbsp olive oil",
+      //     "1 onion, finely sliced",
+      //     "2 garlic cloves, finely sliced",
+      //     "1 small red pepper, deseeded and finely sliced",
+      //     "1 red chilli, finely chopped",
+      //     "1 tsp ground cumin",
+      //     "1 tsp ground cinnamon",
+      //     "1 tsp allspice",
+      //     "A few large pinches of Mexican oregano or hoja santa (optional; see Know How)",
+      //     "1 tbsp chipotles in adobo (or more to taste; see Know How)",
+      //     "2 x 400g tins chopped tomatoes or 700g fresh tomatoes, chopped",
+      //     "2-3 tsp brown sugar",
+      //     "1 tbsp red wine vinegar",
+      //     "8 medium free-range egg",
+      //     "8 corn or flour tortillas",
+      //     "Sliced avocado",
+      //     "Handful coriander leaves or chervil, torn",
+      //   ],
+      //   method: [
+      //     {
+      //       "Step 1":
+      //         "Heat the oven to 170°C fan/gas 5. Warm the olive oil in a large ovenproof frying pan over a medium heat – or use a regular pan and transfer to a baking dish for step 3. Add the onion, garlic, pepper and chilli. Season with a few pinches of salt and fry gently for 20 minutes until the pepper is soft and sweet.",
+      //     },
+      //     {
+      //       "Step 2":
+      //         "Add the spices and oregano/hoja santa, if using, Cook for 30 seconds more, then add the chipotles, tomatoes, sugar and vinegar with another big pinch of salt. The amount of sugar needed to season this will depend on whether you’re using tinned or fresh tomatoes and their ripeness. Pour in 250ml water, then simmer for 15 minutes until the sauce has reduced a little but is still loose enough to envelop the eggs. Taste to check the seasoning.",
+      //     },
+      //     {
+      //       "Step 3":
+      //         "Make 8 small indents in the sauce and crack in the eggs. Bake in the oven for 12-15 minutes until the whites are just set. While the eggs are cooking, warm the tortillas, then serve with the avocado and a sprinkle of fresh herbs.",
+      //     },
+      //   ],
+      //   portion: "Serves 4",
+      //   time: "Hands-on time 25 min, plus simmering time 10 min ",
+      //   title: "Chipotle baked eggs",
+      // };
       console.log("result ", result);
       console.log("Mexican ", MexicanData);
       setMexicanData(result);
@@ -145,11 +152,11 @@ const MexicanDetails = ({ route }: MexicanDetailsProps) => {
                     {MexicanData.portion}
                   </Text>
                   <View style={{ flexDirection: "row", gap: 2 }}>
-                    <FontAwesome name="star" size={20} color="yellow" />
-                    <FontAwesome name="star" size={20} color="yellow" />
-                    <FontAwesome name="star" size={20} color="yellow" />
-                    <FontAwesome name="star" size={20} color="yellow" />
-                    <FontAwesome name="star-half" size={20} color="yellow" />
+                    <FontAwesome name="star" size={20} color={Colors.secondary.gold1}/>
+                    <FontAwesome name="star" size={20} color={Colors.secondary.gold1}/>
+                    <FontAwesome name="star" size={20} color={Colors.secondary.gold1}/>
+                    <FontAwesome name="star" size={20} color={Colors.secondary.gold1}/>
+                  <FontAwesome name="star-half" size={20} color={Colors.secondary.gold1} />
                   </View>
                 </View>
                 <View style={styles.IngredientBox}>

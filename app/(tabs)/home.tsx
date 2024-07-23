@@ -57,26 +57,16 @@ const Home = () => {
     <SafeAreaView >
     <ScrollView>
     <View>
-        <Button title="Go Back" color={Colors.primary.color5} onPress={() => navigation.goBack()} />
         <HomeSearch />
         {categories.length>0&&<Categories categories={categories} activeCategory={activeCategory} handleChangeCategory={handleChangeCategory} />}
         {/* recipes */}
         
           <Recipes meals={meals} categories={categories}/>
-        
         <Recomend />
-        
       </View>
     </ScrollView>
     </SafeAreaView>
   );
 };
-
-const styles=StyleSheet.create({
-  Container:{
-    
-  }
-
-})
 
 export default Home;
