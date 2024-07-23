@@ -89,8 +89,8 @@ const MexicanDetails = ({ route }: MexicanDetailsProps) => {
       //   time: "Hands-on time 25 min, plus simmering time 10 min ",
       //   title: "Chipotle baked eggs",
       // };
-      console.log("result ", result);
-      console.log("Mexican ", MexicanData);
+      // console.log("result ", result);
+      // console.log("Mexican ", MexicanData);
       setMexicanData(result);
     } catch (error) {
       console.error(error);
@@ -99,7 +99,7 @@ const MexicanDetails = ({ route }: MexicanDetailsProps) => {
 
   useEffect(() => {
     fetchMexicanDetails();
-    console.log("Mexican ", MexicanData);
+    // console.log("Mexican ", MexicanData);
   }, []);
 
   if (!MexicanData) {

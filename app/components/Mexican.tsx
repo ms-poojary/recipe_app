@@ -113,7 +113,7 @@ const toggleFavorite = (id: string) => {
         <Text style={{ fontFamily:'font5',color:Colors.secondary.darkgrey2, fontSize: 16 }}>{item.title}</Text>
         <View style={styles.icons}>
           <View style={{ flexDirection: 'row', gap: 10 }}>
-            <Entypo name="bar-graph" size={20} color="black" />
+            <Entypo name="bar-graph" size={20} color={Colors.secondary.darkgrey2} />
             <Text>{item.difficulty}</Text>
           </View>
           <Pressable onPress={() => toggleFavorite(item.id)}>
