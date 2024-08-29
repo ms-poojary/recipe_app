@@ -4,17 +4,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import Loading from "./loading"; // Ensure this path is correct
-import {
-  createNativeStackNavigator,
-  NativeStackScreenProps,
-} from "@react-navigation/native-stack";
+import {  createNativeStackNavigator,NativeStackScreenProps,} from "@react-navigation/native-stack";
 import { RootStackParamList } from "../(tabs)/Explore";
 import { FontAwesome } from "@expo/vector-icons";
+import {MEXICAN_DETAILS} from '@env';
 
-type MexicanDetailsProps = NativeStackScreenProps<
-  RootStackParamList,
-  "MexicanDetails"
->;
+
+type MexicanDetailsProps = NativeStackScreenProps<RootStackParamList, "MexicanDetails">;
 
 const MexicanDetails = ({ route }: MexicanDetailsProps) => {
   const { MexicanId } = route.params;
@@ -31,15 +27,11 @@ const MexicanDetails = ({ route }: MexicanDetailsProps) => {
       method: "GET",
       // old key
       headers: {
-        "x-rapidapi-key": "f4067ac23dmshb21fc863d9d6345p105c8ejsnfa2872eb4ce3",
+        "x-rapidapi-key": MEXICAN_DETAILS,
         "x-rapidapi-host": "the-mexican-food-db.p.rapidapi.com",
       },
 
-      // new Key
-    // headers: {
-    //   'x-rapidapi-key': '36dab04c92mshdf61430d47f24fcp14b243jsn5cc8a50ad87f',
-    //   'x-rapidapi-host': 'the-mexican-food-db.p.rapidapi.com'
-    // }
+     
     };
 
     try {

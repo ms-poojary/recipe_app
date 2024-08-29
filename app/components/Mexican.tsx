@@ -8,6 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Loading from './loading';
 import {createNativeStackNavigator, NativeStackScreenProps} from '@react-navigation/native-stack'
 import {RootStackParamList} from '../(tabs)/Explore'
+import { MEXICAN_KEY } from '@env'
 
 type MexicanProps=NativeStackScreenProps<RootStackParamList,'Mexican'>;
 
@@ -33,16 +34,8 @@ const toggleFavorite = (id: string) => {
     const url = 'https://the-mexican-food-db.p.rapidapi.com/';     
            const options = {
       method: 'GET',
-      // old key
-    //   headers: {
-    //   	'x-rapidapi-key': 'f4067ac23dmshb21fc863d9d6345p105c8ejsnfa2872eb4ce3',
-		// 'x-rapidapi-host': 'the-mexican-food-db.p.rapidapi.com'
-    //   }
-
-
-    // new Key
     headers: {
-      'x-rapidapi-key': '36dab04c92mshdf61430d47f24fcp14b243jsn5cc8a50ad87f',
+      'x-rapidapi-key': MEXICAN_KEY,
       'x-rapidapi-host': 'the-mexican-food-db.p.rapidapi.com'
     }
     };
@@ -114,7 +107,7 @@ const toggleFavorite = (id: string) => {
         <View style={styles.icons}>
           <View style={{ flexDirection: 'row', gap: 10 }}>
             <Entypo name="bar-graph" size={20} color={Colors.secondary.darkgrey2} />
-            <Text>{item.difficulty}</Text>
+            <Text style={{color:Colors.secondary.darkgrey2}}>{item.difficulty}</Text>
           </View>
           <Pressable onPress={() => toggleFavorite(item.id)}>
           <Ionicons
